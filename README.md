@@ -1,141 +1,89 @@
-Dataset
+# Somalia Food Price Time Series Analysis
 
-Source: World Food Programme (WFP) — VAM Food Prices Database
+## Project Overview
+
+This project analyzes historical staple food prices in Somalia using the World Food Programme (WFP VAM) dataset.
+The goal is to transform a large, messy real-world dataset into a clean analytical dataset and extract meaningful economic insights.
+
+The analysis focuses on staple commodities including maize, sorghum, rice, and wheat flour across multiple regions and years.
+
+---
+
+## Objectives
+
+* Clean and preprocess raw market price data
+* Handle missing values and inconsistent entries
+* Analyze long-term food price trends
+* Compare price behavior between staple commodities
+* Study correlation between major staple foods
+* Prepare dataset for predictive modeling
+
+---
+
+## Dataset
+
+Source: World Food Programme (WFP) - Vulnerability Analysis and Mapping (VAM)
 
 The dataset contains:
 
-Multiple countries
+* Market locations
+* Commodity type
+* Units and currency
+* Monthly price observations
+* Multi-year coverage (1995–2021)
 
-Multiple regions and markets
+---
 
-Different commodities (rice, maize, sorghum, wheat, fuel, livestock, etc.)
+## Data Preparation
 
-Monthly price observations across multiple years
+Key preprocessing steps:
 
-The raw dataset contains:
+* Column selection and renaming
+* Date construction from Year and Month
+* Handling missing values (NaN analysis)
+* Filtering Somalia-specific records
+* Creating time-indexed data
+* Feature reduction using correlation analysis
 
-Missing values
+---
 
-Inconsistent observations
+## Exploratory Data Analysis
 
-Non-overlapping time series
+Performed analyses include:
 
-Redundant variables
+* Price distribution visualization
+* Commodity average price comparison
+* Monthly trend visualization
+* Time series plots
+* Correlation heatmap between staple foods
 
-The project focuses specifically on Somalia to perform deep analysis instead of shallow global analysis.
+Main insight:
+Strong correlation was observed between Maize and Sorghum prices, suggesting shared market drivers.
 
-Objectives
+---
 
-Clean and structure a messy real-world dataset
+## Tools Used
 
-Filter country-specific observations (Somalia)
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
 
-Standardize column names and remove irrelevant variables
+---
 
-Investigate missing values and incomplete time series
+## Future Work
 
-Analyze staple food price behavior over time
+* Price forecasting using regression models
+* Time-series modeling
+* Inflation proxy estimation
+* Market shock detection
 
-Identify relationships between staple commodities
+---
 
-Prepare the data for future machine learning modeling
+## Author
 
-Workflow
-1. Data Cleaning
-
-Renamed columns for readability
-
-Removed unnecessary identifiers
-
-Converted Month + Year into time index
-
-Filtered Somalia observations
-
-Standardized units and currencies
-
-Investigated missing values (NaN analysis)
-
-2. Exploratory Data Analysis
-
-Price distribution analysis (histograms)
-
-Commodity average price comparison
-
-Time-series price trends
-
-Staple food filtering
-
-Correlation analysis between staple foods
-
-3. Handling Missing Data
-
-Major issue discovered:
-Different commodities were recorded in different months.
-
-Solution:
-
-Identified overlapping time periods
-
-Built a “core commodity dataset”
-
-Removed incomplete observations only when necessary
-
-This allowed meaningful comparison across commodities.
-
-Key Findings
-Strong Correlation Between Staple Foods
-
-A very high correlation (~0.97) was observed between:
-
-Sorghum (red)
-
-Maize (white)
-
-This suggests:
-
-Shared supply shocks
-
-Linked food markets
-
-Possible substitution behavior in consumption
-
-Price Volatility
-
-Staple food prices show:
-
-Sudden spikes
-
-Long-term inflation trends
-
-Common movement across commodities
-
-This indicates market-wide economic pressure rather than isolated commodity shocks.
-
-Skills Demonstrated
-
-Python (Pandas, Matplotlib, Seaborn)
-
-Data cleaning and transformation
-
-Handling missing values
-
-Feature selection
-
-Time series aggregation
-
-Correlation analysis
-
-Data visualization
-
-Analytical reasoning
-
-Project Structure
-Food-Price-Analysis/
-│
-├── data/
-│   └── wfpvam_foodprices.csv
-│
-├── notebooks/
-│   └── analysis.ipynb
-│
-└── README.md
+Kamal Mohamed
+Mogadishu, Somalia
+Open to Remote Opportunities
